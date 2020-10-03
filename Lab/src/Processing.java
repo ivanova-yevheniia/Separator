@@ -15,13 +15,18 @@ public class Processing {
 		int number_symb = 0;
 		String new_line = "";
 		boolean quote = false;
+		boolean com = false;
 		while(!line.isEmpty()) {
 			if(line.startsWith(separator1) && quote == false) {
 				new_line += number_symb + separator2;
 				number_symb = 0;
 			}
 			else if(line.startsWith("\"")) {quote = !quote;}
-			else{number_symb++;}
+			else if(line.indexOf('/')==0 && line.indexOf('*')==1) {com = true;}
+			else if(line.indexOf('*')==0 && line.indexOf('/')==1) {com = false;line = line.substring(1);}
+			else if(line.startsWith("\"")) {quote = !quote;}
+			else if (com == false){number_symb++;}
+			else {}
 		line = line.substring(1);
 		}
 		if(number_symb !=0) {new_line += number_symb;}
