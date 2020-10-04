@@ -1,5 +1,0 @@
-abc,1234,q2!cvb
-"abc,1234",q2!cvb
-abcd,1234/*koment*/
-a"bcd,,hj"
-"app"ap,"apr"ap"e,"ap,apr"
